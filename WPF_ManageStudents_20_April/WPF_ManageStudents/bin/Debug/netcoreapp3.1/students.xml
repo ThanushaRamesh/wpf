@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <firstName>Thanu</firstName>
+    <lastName>Ramesh</lastName>
+    <matNumber>2073444241</matNumber>
+  </Student>
+  <Student>
+    <firstName>Shivani </firstName>
+    <lastName>Moray</lastName>
+    <matNumber>1766491373</matNumber>
+  </Student>
+  <Student>
+    <firstName>Ara</firstName>
+    <lastName>Gonzales</lastName>
+    <matNumber>2133937022</matNumber>
+  </Student>
+  <Student>
+    <firstName>Edit...</firstName>
+    <lastName>Edit...</lastName>
+    <matNumber>1071314256</matNumber>
+  </Student>
+  <Student>
+    <firstName>Edit...</firstName>
+    <lastName>Edit...</lastName>
+    <matNumber>1077031677</matNumber>
+  </Student>
+  <Student>
+    <firstName>Edit...</firstName>
+    <lastName>Edit...</lastName>
+    <matNumber>487297968</matNumber>
+  </Student>
+  <Student>
+    <firstName>Edit...</firstName>
+    <lastName>Edit...</lastName>
+    <matNumber>587339781</matNumber>
+  </Student>
+</ArrayOfStudent>
