@@ -23,7 +23,10 @@ namespace WPF_ManageStudents
 
         private void Application_Startup(object sender, StartupEventArgs e)                                                                 
         {
+
             //get data from storage
+            _students = MyStorage.ReadXML<ObservableCollection<Student>>("students.xml");
+
             if(_students == null)
             {
                 _students = new ObservableCollection<Student>();

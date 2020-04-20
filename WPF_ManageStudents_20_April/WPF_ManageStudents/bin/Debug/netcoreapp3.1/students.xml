@@ -4,35 +4,48 @@
     <firstName>Thanu</firstName>
     <lastName>Ramesh</lastName>
     <matNumber>2073444241</matNumber>
+    <gender>f</gender>
   </Student>
   <Student>
     <firstName>Shivani </firstName>
     <lastName>Moray</lastName>
     <matNumber>1766491373</matNumber>
+    <gender>f</gender>
   </Student>
   <Student>
     <firstName>Ara</firstName>
     <lastName>Gonzales</lastName>
     <matNumber>2133937022</matNumber>
+    <gender>f</gender>
   </Student>
   <Student>
-    <firstName>Edit...</firstName>
-    <lastName>Edit...</lastName>
+    <firstName>Priya</firstName>
+    <lastName>Kumari</lastName>
     <matNumber>1071314256</matNumber>
   </Student>
   <Student>
-    <firstName>Edit...</firstName>
-    <lastName>Edit...</lastName>
+    <firstName>Pooja</firstName>
+    <lastName>Ramesh</lastName>
     <matNumber>1077031677</matNumber>
   </Student>
   <Student>
-    <firstName>Edit...</firstName>
-    <lastName>Edit...</lastName>
+    <firstName>Darshini</firstName>
+    <lastName>Gownda</lastName>
     <matNumber>487297968</matNumber>
   </Student>
   <Student>
-    <firstName>Edit...</firstName>
-    <lastName>Edit...</lastName>
+    <firstName>Muktha</firstName>
+    <lastName>Jagan</lastName>
     <matNumber>587339781</matNumber>
+  </Student>
+  <Student>
+    <firstName>Kalyan</firstName>
+    <lastName>Kumar</lastName>
+    <matNumber>1134686461</matNumber>
+  </Student>
+  <Student>
+    <firstName>Pallavi</firstName>
+    <lastName>Sharma</lastName>
+    <matNumber>918822186</matNumber>
   </Student>
 </ArrayOfStudent>

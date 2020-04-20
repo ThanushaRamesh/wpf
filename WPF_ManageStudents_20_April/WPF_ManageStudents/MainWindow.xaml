@@ -101,6 +101,7 @@
                     ToolTip="Enter part of first or last name to filter"
                     TextChanged="Tbx_filter_TextChanged"/>
                 <TextBlock Text="{Binding ElementName=Lbx_Students, Path=Items.Count}" FontSize="10" FontWeight="Black" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                <Button Content="G" Click="Button_Click"/>
             </StackPanel>
         </StackPanel>
 

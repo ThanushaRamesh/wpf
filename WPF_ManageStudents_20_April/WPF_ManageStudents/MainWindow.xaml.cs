@@ -87,5 +87,12 @@ namespace WPF_ManageStudents
             Visibility = Visibility.Hidden;
             win.ShowDialog();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var lst = from s in App._students where s.gender == "f"  select s;
+            Lbx_Students.ItemsSource = lst;
+
+        }
     }
 }
