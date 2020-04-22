@@ -1,0 +1,71 @@
+﻿<Window x:Class="WPF_QuizApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_QuizApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="387*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="189*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="History Quiz" TextWrapping="Wrap"
+                   FontSize="16"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   FontWeight="Bold"
+                   Foreground="BlueViolet"
+                   Grid.Column="1" Margin="0,2,0,0" Height="35"
+                  />
+
+        <StackPanel Grid.Column="1" Margin="0,17,0,0" Orientation="Vertical" Grid.Row="1"
+                    Width="310" VerticalAlignment="Top" HorizontalAlignment="Left"
+                    >
+            <TextBlock Text="{Binding qText}" TextWrapping="Wrap" 
+                   MinHeight="50"
+                   Width="310"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Grid.Column="1" 
+                   FontSize="14"
+                   Grid.Row="1"/>
+            <ListBox Height="100" Width="310"
+                     HorizontalAlignment="Left" 
+                     VerticalAlignment="Top"
+                     Margin="0,15,0,0"
+                     ItemsSource="{Binding answers}"
+                     SelectionChanged="Lbx_Seletion">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Margin="0,5">
+                            <Rectangle Height="10"
+                                       Width="10"
+                                       Fill="OrangeRed"
+                                       Margin="0,0,8,0"/>
+                            <TextBlock Text="{Binding aText}" FontSize="13"
+                                       FontWeight="Bold"/>
+                        </StackPanel>                        
+                    </DataTemplate>            
+                 </ListBox.ItemTemplate>          
+              </ListBox>
+            <Button 
+                Name="Btn_newQuestion"
+                Grid.Column="1" Margin="219,0,0,20"
+                Grid.Row="1"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+                Content="Next Question"
+                    Height="20"
+                    Width="90" Click="Btn_newQuestion_Click" />
+        </StackPanel>
+
+
+
+    </Grid>
+</Window>
