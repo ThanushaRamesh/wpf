@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <firstName>Thanu</firstName>
+    <lastName>Ramesh</lastName>
+    <matNumber>929337820</matNumber>
+    <gender>f</gender>
+    <picked>false</picked>
+  </Student>
+  <Student>
+    <firstName>Shivani</firstName>
+    <lastName>Moray</lastName>
+    <matNumber>949599201</matNumber>
+    <picked>false</picked>
+  </Student>
+  <Student>
+    <firstName>Vikas</firstName>
+    <lastName>Gowda</lastName>
+    <matNumber>33388040</matNumber>
+    <gender>m</gender>
+    <picked>false</picked>
+  </Student>
+  <Student>
+    <firstName>Ankush</firstName>
+    <lastName>Mallegowda</lastName>
+    <matNumber>799040722</matNumber>
+    <gender>m</gender>
+    <picked>false</picked>
+  </Student>
+  <Student>
+    <firstName>Adharsh</firstName>
+    <lastName>Mangalore</lastName>
+    <matNumber>1472341386</matNumber>
+    <gender>m</gender>
+    <picked>false</picked>
+  </Student>
+</ArrayOfStudent>

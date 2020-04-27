@@ -1,0 +1,128 @@
+﻿<Window x:Class="WPF_ManageStudents.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_ManageStudents"
+        xmlns:Resx="clr-namespace:WPF_ManageStudents.Properties"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="{x:Static Resx:Resources.appName}" 
+        Height="450" Width="800" 
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.Resources>
+            <local:ConvertBoolToText x:Key="bTop"/>
+
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="233*"/>
+            <ColumnDefinition Width="567*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="469*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock HorizontalAlignment="Left" 
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Top"
+                   Margin="15,20,0,0" 
+                   FontSize="16"
+                   Foreground="DarkGreen"
+                   FontWeight="Bold"
+                   Grid.Row="0"
+                   Height="21" Text="{x:Static Resx:Resources.manageStudents}"/>
+
+        <ListBox Name="Lbx_Students" HorizontalAlignment="Left" Height="252" 
+                 VerticalAlignment="Top" Width="185" Margin="15,52,0,0" Grid.Row="1">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Margin="0,4">
+                        <Run Text="{Binding firstName}"/>
+                        <Run Text=" "/>
+                        <Run Text="{Binding lastName}" FontWeight="Bold"/>
+                        <LineBreak/>
+                        <Run Text="{Binding matNumber}"/>
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel 
+            HorizontalAlignment="Left"
+            Height="239"
+            VerticalAlignment="Top"
+            Width="300"
+            Grid.Column="1" Grid.Row="1" 
+            Margin="19,59,0,0"
+            DataContext="{Binding ElementName=Lbx_Students,Path=SelectedItem}">
+            <Grid HorizontalAlignment="Stretch" Margin="0,0,5,15">
+                <TextBlock Text="{Binding name}" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold"/>
+                <TextBlock Text="{Binding matNumber}" HorizontalAlignment="Right" FontSize="14"/>
+
+
+            </Grid>
+
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <TextBlock Text="{x:Static Resx:Resources.firstName}" TextWrapping="Wrap" Width="66"/>
+                <TextBox Text="{Binding firstName}" TextWrapping="Wrap" Width="212"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <TextBlock Text="{x:Static Resx:Resources.lastName}" TextWrapping="Wrap" Width="66"/>
+                <TextBox Text="{Binding lastName}" TextWrapping="Wrap" Width="212"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <TextBlock Text="Gender" TextWrapping="Wrap" Width="66"/>
+                <ComboBox Name="CoBx_gender" SelectedItem="{Binding gender}" Width="45"/>
+            </StackPanel>
+
+            <ComboBox Name="Cobx_Picked" SelectedItem="{Binding picked, Converter={StaticResource bTop}}" Margin="67,10,0,10"
+                      HorizontalAlignment="Left" Width="212"/>
+
+            <Button Content="Go to Window"  Click="Btn_GoToWindow_Click"/>
+            <StackPanel Orientation="Horizontal" Margin=" 0,10">
+                <Button Content="Next"  Click="Btn_Nx_Click" Margin="5,0"/>
+                <Button Content="Prev"  Click="Btn_pr_Click" Margin="5,0"/>
+
+            </StackPanel>
+
+            <ComboBox Name="CoBox_Lang" SelectionChanged="CoBox_Lang_SelectionChanged"/>
+
+
+        </StackPanel>
+
+        <StackPanel Margin="115,309,0,0"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Height="45" Grid.Row="1">
+            <Button x:Name="Btn_Del" Click="Btn_Del_Click" Content="-"   Style="{StaticResource ResourceKey=Btn_Ctl}" Margin="5,0" Width="35" Height="31"/>
+            <Button x:Name="Btn_Add" Content="+"   Style="{StaticResource ResourceKey=Btn_Ctl}" Margin="5,0" Width="35" Height="31" Click="Btn_Add_Click"/>
+        </StackPanel>
+
+
+
+        <StackPanel  Margin="15,10,0,0"  
+                     Orientation="Vertical"
+                     HorizontalAlignment="Left" VerticalAlignment="Top"
+                     Width="180" Height="34" Grid.Row="1">
+            <TextBlock TextWrapping="Wrap"
+                   Text="Enter student name to filter list"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                   FontSize="9"
+                   Foreground="DarkGray" Height="14"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="Tbx_filter"
+                    Height="18"
+                    TextWrapping="Wrap"
+                    Width="144"
+                    ToolTip="Enter part of first or last name to filter"
+                    TextChanged="Tbx_filter_TextChanged"/>
+                <TextBlock Text="{Binding ElementName=Lbx_Students, Path=Items.Count}" FontSize="10" FontWeight="Black" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                <Button Content="G" Click="Button_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>
